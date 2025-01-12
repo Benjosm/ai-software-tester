@@ -51,13 +51,18 @@
    OPENAI_API_KEY=<your-openai-api-key>
    ```
 
-4. **Setup Hosted Environment with Docker**
-   The hosted environment will use a Docker container deployed on Vercel to manage workflows. The container will:
-   - Pull code from the GitHub repository to ensure up-to-date functionality.
-   - Provide an isolated environment to execute commands, run tests, and interact with APIs.
+4. **Run Locally**
+   To set up and run the application on your local machine:
+   ```bash
+   npm run dev
+   ```
+   This sets up a local server for debugging and testing workflows.
+
+5. **Set Up a Hosted Environment (Optional)**
+   If a shared environment is required for team-wide access, the application can be hosted using Docker in any cloud environment. 
 
    **Steps to Deploy:**
-   - Create a `Dockerfile` in the repository root (example provided below):
+   - Create a `Dockerfile` in the repository root:
      ```dockerfile
      FROM node:alpine
      WORKDIR /app
@@ -65,17 +70,17 @@
      RUN npm install
      CMD ["npm", "start"]
      ```
-   - Deploy the Docker container to Vercel:
-     ```bash
-     vercel --prod
-     ```
-   - Configure Vercel to use the `.env` file for environment variables.
-
-5. **Run Locally** (Optional)
-   ```bash
-   npm run dev
-   ```
-   This sets up a local server for debugging and testing workflows.
+   - You can also use **Docker Desktop** for local testing:
+     1. Download and install Docker Desktop.
+     2. Build the Docker image:
+        ```bash
+        docker build -t ai-software-tester .
+        ```
+     3. Run the Docker container:
+        ```bash
+        docker run -p 3000:3000 ai-software-tester
+        ```
+   - For cloud hosting, follow the provider-specific instructions to deploy the Docker container and configure environment variables.
 
 ---
 
