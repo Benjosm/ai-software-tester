@@ -1,0 +1,16 @@
+{
+  "name": "ai-software-tester",
+  "version": "1.0.0",
+  "description": "**AI Software Tester** is a powerful tool designed to automate test creation, execution, and bug resolution for software projects. Using event-driven architecture powered by Vercel serverless functions, the AI integrates seamlessly with Jira, GitHub, Discord, and various testing tools to enhance development workflows. It offers robust automation, efficient test management, and rapid issue resolution, empowering teams to focus on innovation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ai-software-tester": "file:",
+    "express": "^4.21.2"
+  }
+}
